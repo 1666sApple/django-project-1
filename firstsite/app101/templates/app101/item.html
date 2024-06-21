@@ -1,5 +1,7 @@
 {% for item in items %}
 <ul>
-    <li> {{item.id}} -- {{ item.name }} </li>
+    <li>
+        <a href = {% url 'app101:detail' item.id %}> {{item.id}} -- {{ item.name }}      
+    </li>
 </ul>
 {% endfor %}
