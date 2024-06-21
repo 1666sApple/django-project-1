@@ -1,7 +1,22 @@
-{% for item in items %}
-<ul>
-    <li>
-        <a href = {% url 'app101:detail' item.id %}> {{item.id}} -- {{ item.name }}      
-    </li>
-</ul>
-{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Item Page</title>
+    <link rel = "stylesheet" href = "{% static 'app101/style.css' %}">
+</head>
+<body>
+
+    <ul>
+        {% for item in items %}
+        <li>
+            <a href = {% url 'app101:detail' item.id %}> {{item.id}} -- {{ item.name }}      
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
