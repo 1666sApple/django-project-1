@@ -1,8 +1,13 @@
-<h1>{{ item.name }}</h1>
+{% extends 'app101/base.html' %}
+<body>
+    {% block body %}
+    <h1>{{ item.name }}</h1>
 
-<p>
+    <p>
     {{ item.description }}
-</p>
+    </p>
 
-<h3> {{ item.price }} </h3>
+    <h3> {{ item.price }} </h3>
+    {% endblock %}
+</body>
 

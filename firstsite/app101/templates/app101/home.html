@@ -1,3 +1,4 @@
+{% extends 'app101/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,10 @@
     <title>Template Homepage</title>
 </head>
 <body>
-    <h1>
-        Template Homepage
-    </h1>
+    {% block body %}
+        <h1>
+            Template Homepage
+        </h1>
+    {% endblock %}
 </body>
 </html>
