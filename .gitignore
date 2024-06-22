@@ -1,2 +1,5 @@
 .venv/
 firstsite/swap.py
+firstsite/db.sqlite3
+firstsite/firstsite/__pycache__/
+firstsite/firstsite/settings.py
