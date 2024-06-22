@@ -1,4 +1,5 @@
 {% extends 'app101/base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +10,40 @@
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {% comment %} <link href="{% static 'style.css' %}" rel="stylesheet"> {% endcomment %}
 </head>
 <body>
     {% block body %}
-    <ul>
-        {% for item in items %}
-        <li>
-            <a href = {% url 'app101:detail' item.id %}> {{item.id}} -- {{ item.name }}      
-        </li>
-        {% endfor %}
-    </ul>
+    
+        <div class="container my-5">
+            {% for item in items %}
+                <div class="row item-row">
+                    <div class="col-md-6 item-text">
+                        <h3 class="mb-0">{{ item.name }}</h3>
+                        <h5 class="mb-0"> BDT {{ item.price }}</h5>
+                        <p class="item-description">{{ item.description }}</p>
+                    </div>
+                    <div class="col-md-2 item-image">
+                        <img class="img-fluid rounded" src="{{ item.image }}" alt="{{ item.name }}">
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center item-buttons">
+                        <a href="{% url 'app101:detail' item.id %}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
     {% endblock %}
 </body>
-</html> 
+</html>
+
+
+
+
+{% comment %} <ul>
+    {% for item in items %}
+    <li>
+        <a href = {% url 'app101:detail' item.id %}> {{item.id}} -- {{ item.name }}      
+    </li>
+    {% endfor %}
+</ul> {% endcomment %}
