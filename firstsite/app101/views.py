@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Item
+from .forms import ItemForm
+
 
 # Create your views here.
 def index(request):
@@ -27,3 +29,13 @@ def detail(request, item_id):
         'item': item,
     }
     return render(request, 'app101/detail.html', context)
+
+def create_item(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('app101:home')
+    else:
+        form = ItemForm()
+    return render(request, 'app101/create_item.html', {'form': form})
