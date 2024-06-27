@@ -1,0 +1,8 @@
+<form method="POST">
+    {% csrf_token %}
+    <h5> Are you sure you want to delete {{item.name}}?</h5>
+    <h6> Once you delete the item, you can't recover it.</h6>
+
+    <button type="submit">Delete</button>
+    <a href="{% url 'app101:detail' item.id %}">Cancel</a>
+</form>

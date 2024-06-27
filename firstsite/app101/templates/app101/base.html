@@ -18,8 +18,8 @@
         <div class="navbar">
             {% comment %} <a class="navbar-brand" href="#"><img src="{% static 'app101/logo.png' %}" alt="" width="30" height="30`" class="d-inline-block align-text-top"></a> {% endcomment %}
             <a class="nav-link text-white me-3" href="#">Search </a>
-            <a class="nav-link text-white me-3" href="#">Login </a>
-            <a class="nav-link text-white me-3" href="#">Register </a>
+            <a class="nav-link text-white me-3" href="{% url 'app101:create_item'%}">Add </a>
+            <a class="nav-link text-white me-3" href="#">Delete</a>
             <a class="nav-link text-white me-3" href="#">About </a>
             <a class="nav-link text-white me-3" href="#">Contact </a>
         </div>

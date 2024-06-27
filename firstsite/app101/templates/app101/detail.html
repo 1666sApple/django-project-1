@@ -22,6 +22,7 @@
                 <h1>{{ item.name }}</h1>
                 <p>{{ item.description }}</p>
                 <h3>BDT {{ item.price }}</h3>
+                <a href="{% url 'app101:delete_item' item.id %}" class="btn btn-primary">Delete</a>
             </div>
         </div>
     </div>
