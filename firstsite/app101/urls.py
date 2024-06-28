@@ -11,7 +11,7 @@ urlpatterns = [
     path('item/', views.item, name='item'),
     path('item/<int:item_id>/', views.detail, name='detail'),
     #add item
-    path('/item/add/', views.create_item, name='create_item'),
+    path('item/add/', views.create_item, name='create_item'),
     #edit Item
     path('item/edit/<int:id>/', views.edit_item, name='edit_item'),
     #delete Item

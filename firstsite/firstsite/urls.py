@@ -19,11 +19,24 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from users import views as user_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    #admin
     path('admin/', admin.site.urls),
-    path('app101/', include('app101.urls')),
+    #homepage or the landing page
     path('', views.home, name='home'),
+    #app101 url
+    path('app101/', include('app101.urls')),
+    #users url
+    # path('users/', include('users.urls')), 
+    #register
+    path('register/', user_views.register, name='register'), 
+    #login 
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    #logout
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), 
 ]
 
 if settings.DEBUG:

@@ -18,13 +18,21 @@
         <div class="navbar">
             <a class="navbar-brand" href="#"><img src="{% static 'app101/logo.png' %}" alt="" width="30" height="30`" class="d-inline-block align-text-top"></a>
             <a class="nav-link text-white me-3" href="#">Search </a>
-            <a class="nav-link text-white me-3" href="#">Login </a>
-            <a class="nav-link text-white me-3" href="#">Register </a>
-            <a class="nav-link text-white me-3" href="#">About </a>
+            <a class="nav-link text-white me-3" href="{% url 'login' %}">Login </a>
+            <a class="nav-link text-white me-3" href="{% url 'register' %}">Register</a>
+            <a class="nav-link text-white me-3" href="{% url 'admin:index' %}">Admin</a>
             <a class="nav-link text-white me-3" href="#">Contact </a>
         </div>
         
     </nav>
+
+    {% if messages  %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
 
     {% block body %}
     {% endblock %}
