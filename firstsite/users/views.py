@@ -11,18 +11,18 @@ def register(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
-            # messages.success(request, f'Welcome! Account created for {username}!')
+            messages.success(request, f'Welcome! Account created for {username}!')
             login(request, user)
             return redirect('login')
-        else:
-            messages.error(request, 'Error creating account. Please try again.')
+        # else:
+            # messages.error(request, 'Error creating account. Please try again.')
     else:
         form = RegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
-def login(request):
-    return render(request, 'users/login.html')
+# def login(request):
+#     return render(request, 'users/login.html')
     
-# def logout(request):
-#     return render(request, 'users/logout.html')
-
+def logout_view(request):
+    logout(request)
+    return render(request, 'users/logout.html', {'redirect_url': '/'})
