@@ -12,8 +12,8 @@ This is a Django application for managing items with CRUD (Create, Read, Update,
 
 ## Requirements
 
-- Python 3.x
-- Django 3.x or higher
+- Python 3.10
+- Django 4 or higher
 
 ## Installation
 
