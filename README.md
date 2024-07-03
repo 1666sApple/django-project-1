@@ -72,8 +72,7 @@ Searching for Items
 To search for items, use the search form in the navigation bar. Enter the name of the item you are looking for and click the "Search" button. The search results will be displayed on the search results page.
 
 Project Structure
-arduino
-Copy code
+```
 django-project-1/
 │
 ├── app101/
@@ -99,16 +98,35 @@ django-project-1/
 │   └── views.py
 │
 ├── firstsite/
+│   ├── templates/
+│   │   └── app101/
+│   │       ├── base.html
+│   │       ├── home.html
 │   ├── __init__.py
 │   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
 │
+├── users/
+│   ├── migrations/
+│   ├── templates/
+│   │   └── app101/
+│   │       ├── login.html
+│   │       ├── logout.html
+│   │       ├── register.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
 ├── db.sqlite3
 ├── manage.py
 ├── requirements.txt
 └── README.md
+```
 Contributing
 If you would like to contribute to this project, please fork the repository and submit a pull request.
 
