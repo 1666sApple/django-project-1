@@ -1,0 +1,17 @@
+<!-- search_results.html -->
+{% extends 'app101/base.html' %}
+
+{% block body %}
+    <h1>Search Results</h1>
+    <p>You searched for: "{{ query }}"</p>
+
+    {% if results %}
+        <ul>
+        {% for result in results %}
+            <li>{{ result.name }} - {{ result.description }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock %}
