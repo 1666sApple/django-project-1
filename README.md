@@ -51,13 +51,14 @@ Open your web browser and navigate to http://127.0.0.1:8000 to access the applic
 ### Usage
 #### Home Page
 The home page provides links to the following functionalities:
-
+```
 1. View all items
 2. Create a new item
 3. Edit an existing item
 4. Delete an item
 5. Search for items
-6. Creating an Item
+```
+### Creating an Item
 
 To create a new item, navigate to http://127.0.0.1:8000/item/create/ and fill out the form. Click the "Save" button to create the item.
 
