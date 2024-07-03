@@ -25,4 +25,5 @@ def register(request):
     
 def logout_view(request):
     logout(request)
-    return render(request, 'users/logout.html', {'redirect_url': '/'})
+    context = {'message': 'You have been logged out.'}
+    return render(request, 'users/logout.html', context)
