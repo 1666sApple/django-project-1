@@ -38,6 +38,8 @@ urlpatterns = [
     #logout
     # path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html', next_page=None), name='logout'), 
     path('logout/', user_views.logout_view, name='logout'),
+    #profile
+    path('profile/', user_views.profilepage, name='profile'),
 ]
 
 # if settings.DEBUG:
