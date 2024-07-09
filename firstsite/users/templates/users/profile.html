@@ -1,3 +1,24 @@
-<h1>
-    {{ user.username }}
-</h1>
+{% extends "users/base.html" %}
+
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header text-center my-4">
+        <img src="{{ user.profile.profile_picture.url }}" alt="Profile Image" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+        <h1>{{ user.username }}</h1>
+    </div>
+    <div class="profile-details">
+        <h2>About Me</h2>
+        <p><strong>Bio:</strong> {{ user.profile.bio }}</p>
+        <p><strong>Age:</strong> {{ user.profile.age }}</p>
+        <p><strong>Gender:</strong> {{ user.profile.gender }}</p>
+        <p><strong>Location:</strong> {{ user.profile.location }}</p>
+        <p><strong>Website:</strong> <a href="{{ user.profile.website }}" target="_blank">{{ user.profile.website }}</a></p>
+        <p><strong>Phone Number:</strong> {{ user.profile.phone_number }}</p>
+        <p><strong>Birth Date:</strong> {{ user.profile.birth_date }}</p>
+        <p><strong>Birth Place:</strong> {{ user.profile.birth_place }}</p>
+        <p><strong>Email:</strong> <a href="mailto:{{ user.profile.email }}">{{ user.profile.email }}</a></p>
+    </div>
+</div>
+{% endblock %}
