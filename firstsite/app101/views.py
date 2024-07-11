@@ -4,6 +4,7 @@ from django.template import loader
 from django.db.models import Q
 from .models import Item
 from .forms import ItemForm
+from django.views.generic.list import ListView
 
 # Create your views here.
 def index(request):
@@ -14,12 +15,19 @@ def home(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def item(request):
-    items = Item.objects.all()
-    context = {
-        'items': items,
-    }
-    return render(request, 'app101/item.html', context)
+# Function Based View
+# def item(request):
+#     items = Item.objects.all()
+#     context = {
+#         'items': items,
+#     }
+#     return render(request, 'app101/item.html', context)
+
+# Class based view
+class Itemclassview(ListView):
+    model = Item
+    template_name = 'app101/item.html'
+    context_object_name = 'items'
 
 def detail(request, item_id):
     item = get_object_or_404(Item, pk=item_id)

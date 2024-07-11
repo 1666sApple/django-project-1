@@ -6,7 +6,7 @@ from datetime import date
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pics/', null=True, blank=True, default='profile_pic.jpg')
+    profile_picture = models.ImageField(upload_to='profile_pics/', null=True, blank=True, default='profile_pic.png')
     location = models.CharField(max_length=75, blank=True)
     gender = models.CharField(max_length=10, blank=True)
     website = models.URLField(max_length=200, blank=True)

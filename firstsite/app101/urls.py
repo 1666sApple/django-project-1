@@ -8,7 +8,7 @@ urlpatterns = [
     
     # app101/
     path('index/', views.index, name='index'),
-    path('item/', views.item, name='item'),
+    path('item/', views.Itemclassview.as_view(), name='item'),
     path('item/<int:item_id>/', views.detail, name='detail'),
     #add item
     path('item/add/', views.create_item, name='create_item'),
